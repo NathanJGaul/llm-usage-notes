@@ -1,4 +1,4 @@
-# %%
+# %% Setup
 import os
 
 from rich import pretty, print
@@ -29,7 +29,7 @@ def get_completion_with_instructions(prompt, instructions, model="gpt-5.5"):
     return response.output_text
 
 
-# %% GPT Response Structure
+# %% ChatGPT Response Structure
 response = client.responses.create(
     model="gpt-3.5-turbo",
     # reasoning={"effort": "low"},
@@ -37,12 +37,12 @@ response = client.responses.create(
 )
 response
 
-# %%
+# %% Basic Completion
 prompt = "Testing 123"
 result = get_completion(prompt)
 result
 
-# %%
+# %% Completion with Instructions
 prompt = "Write me a poem."
 instructions = "You are a robot. Respond like a robot. Beep boop."
 result = get_completion_with_instructions(prompt, instructions)
